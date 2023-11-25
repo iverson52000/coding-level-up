@@ -1,11 +1,10 @@
-package org.alberthsuu.twosum;
+package org.alberthsuu.datastructurealgorithm.twosum;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class TwoSumTest {
-
     @Test
     void twoSumWorks() {
         int[] nums = {2, 7, 11, 15};
