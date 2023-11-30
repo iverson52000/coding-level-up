@@ -1,4 +1,4 @@
-package org.alberthsuu.datastructurealgorithm.twosum;
+package org.alberthsuu.datastructurealgorithm;
 
 import java.util.HashMap;
 
