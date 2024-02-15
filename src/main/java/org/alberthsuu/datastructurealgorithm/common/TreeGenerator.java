@@ -1,4 +1,4 @@
-package org.alberthsuu.datastructurealgorithm;
+package org.alberthsuu.datastructurealgorithm.common;
 
 import java.util.LinkedList;
 import java.util.Queue;
