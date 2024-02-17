@@ -6,10 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
+
 
 class BinaryTreeTraversalTest {
     private BinaryTreeTraversal binaryTreeTraversal;
@@ -24,12 +24,11 @@ class BinaryTreeTraversalTest {
         Integer[] treeArray = {1, null, 2, 3};
         TreeNode root = TreeGenerator.fromArray(treeArray);
 
-        BinaryTreeTraversal binaryTreeTraversal = new BinaryTreeTraversal();
         List<Integer> result = binaryTreeTraversal.inorderDfsTraversal(root);
 
-        Integer[] expectedResult = {1, 3, 2};
+        List<Integer> expectedResult = List.of(1, 3, 2);
 
-        assertIterableEquals(result, Arrays.asList(expectedResult));
+        assertIterableEquals(result, expectedResult);
     }
 
     @Test

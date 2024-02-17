@@ -19,12 +19,24 @@ class ReverseLinkedListTest {
     void reverseLinkedListFirstTestCase() {
         Integer[] listArray = {1, 2, 3, 4, 5};
         ListNode head = LinkedListGenerator.fromArray(listArray);
-        ListNode res = reverseLinkedList.reverseList(head);
+        ListNode result = reverseLinkedList.reverseList(head);
 
-        Integer[] resArray = LinkedListGenerator.fromNode(res);
+        Integer[] resultArray = LinkedListGenerator.toArray(result);
         Integer[] expectedResult = {5, 4, 3, 2, 1};
 
-        assertArrayEquals(resArray, expectedResult);
+        assertArrayEquals(resultArray, expectedResult);
+    }
+
+    @Test
+    void reverseLinkedListEmptyInput() {
+        Integer[] listArray = {};
+        ListNode head = LinkedListGenerator.fromArray(listArray);
+        ListNode result = reverseLinkedList.reverseList(head);
+
+        Integer[] resultArray = LinkedListGenerator.toArray(result);
+        Integer[] expectedResult = {null};
+
+        assertArrayEquals(resultArray, expectedResult);
     }
 
 }
