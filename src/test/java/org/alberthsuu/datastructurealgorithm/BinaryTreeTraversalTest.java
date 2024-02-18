@@ -1,6 +1,6 @@
 package org.alberthsuu.datastructurealgorithm;
 
-import org.alberthsuu.datastructurealgorithm.common.TreeGenerator;
+import org.alberthsuu.datastructurealgorithm.common.BinaryTreeGenerator;
 import org.alberthsuu.datastructurealgorithm.common.TreeNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,7 +22,7 @@ class BinaryTreeTraversalTest {
     @Test
     void binaryTreeInorderDfsTraversalFirstTestCase() {
         Integer[] treeArray = {1, null, 2, 3};
-        TreeNode root = TreeGenerator.fromArray(treeArray);
+        TreeNode root = BinaryTreeGenerator.fromArray(treeArray);
 
         List<Integer> result = binaryTreeTraversal.inorderDfsTraversal(root);
 
@@ -34,7 +34,7 @@ class BinaryTreeTraversalTest {
     @Test
     void binaryTreeInorderDfsTraversalEmptyInput() {
         Integer[] treeArray = {};
-        TreeNode root = TreeGenerator.fromArray(treeArray);
+        TreeNode root = BinaryTreeGenerator.fromArray(treeArray);
 
         List<Integer> result = binaryTreeTraversal.inorderDfsTraversal(root);
 
@@ -46,7 +46,7 @@ class BinaryTreeTraversalTest {
     @Test
     void binaryTreeBfsTraversalFirstTestCase() {
         Integer[] treeArray = {3, 9, 20, null, null, 15, 7};
-        TreeNode root = TreeGenerator.fromArray(treeArray);
+        TreeNode root = BinaryTreeGenerator.fromArray(treeArray);
 
         List<List<Integer>> result = binaryTreeTraversal.bfsTraversal(root);
 

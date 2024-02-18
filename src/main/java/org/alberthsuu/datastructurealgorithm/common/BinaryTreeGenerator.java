@@ -1,10 +1,13 @@
 package org.alberthsuu.datastructurealgorithm.common;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class TreeGenerator {
-    public static TreeNode fromArray(Integer[] treeArray) {
+public class BinaryTreeGenerator {
+    public static @Nullable TreeNode fromArray(Integer @NotNull [] treeArray) {
         if (treeArray.length == 0) return null;
 
         TreeNode root = new TreeNode(treeArray[0]);
