@@ -2,6 +2,9 @@ package org.alberthsuu.datastructurealgorithm;
 
 import org.alberthsuu.datastructurealgorithm.common.ListNode;
 
+/**
+ * 206. Reverse Linked List
+ */
 public class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
         if (head == null) return null;
