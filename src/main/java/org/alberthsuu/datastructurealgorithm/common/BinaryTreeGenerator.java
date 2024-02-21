@@ -3,7 +3,9 @@ package org.alberthsuu.datastructurealgorithm.common;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class BinaryTreeGenerator {
@@ -28,6 +30,35 @@ public class BinaryTreeGenerator {
         }
 
         return root;
+    }
+
+    public static Integer[] toArray(TreeNode root) {
+        Queue<TreeNode> q = new LinkedList<>();
+        List<Integer> res = new ArrayList<>();
+
+        if (root == null) return res.toArray(Integer[]::new);
+
+        q.offer(root);
+
+        while (!q.isEmpty()) {
+            int size = q.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode peekNode = q.peek();
+                assert peekNode != null;
+                if (peekNode.left != null) q.offer(peekNode.left);
+                if (peekNode.right != null) q.offer(peekNode.right);
+
+                TreeNode pollNode = q.poll();
+
+                assert pollNode != null;
+                res.add(pollNode.val);
+
+            }
+
+        }
+
+        return res.toArray(Integer[]::new);
+
     }
 
 

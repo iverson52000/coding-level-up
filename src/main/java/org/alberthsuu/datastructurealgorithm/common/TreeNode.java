@@ -8,7 +8,7 @@ public class TreeNode {
     TreeNode() {
     }
 
-    TreeNode(Integer val) {
+    public TreeNode(Integer val) {
         this.val = val;
     }
 
