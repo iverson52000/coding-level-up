@@ -34,30 +34,24 @@ public class BinaryTreeGenerator {
 
     public static Integer[] toArray(TreeNode root) {
         Queue<TreeNode> q = new LinkedList<>();
-        List<Integer> res = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
 
-        if (root == null) return res.toArray(Integer[]::new);
+        if (root == null) return result.toArray(Integer[]::new);
 
-        q.offer(root);
+        q.add(root);
 
         while (!q.isEmpty()) {
-            int size = q.size();
-            for (int i = 0; i < size; i++) {
-                TreeNode peekNode = q.peek();
-                assert peekNode != null;
-                if (peekNode.left != null) q.offer(peekNode.left);
-                if (peekNode.right != null) q.offer(peekNode.right);
-
-                TreeNode pollNode = q.poll();
-
-                assert pollNode != null;
-                res.add(pollNode.val);
-
+            TreeNode node = q.poll();
+            if (node == null) {
+                result.add(null);
+                continue;
             }
-
+            result.add(node.val);
+            q.add(node.left);
+            q.add(node.right);
         }
 
-        return res.toArray(Integer[]::new);
+        return result.toArray(Integer[]::new);
 
     }
 

@@ -5,10 +5,7 @@ import org.alberthsuu.datastructurealgorithm.common.TreeNode;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class SerializeAndDeserializeBinaryTreeTest {
     private SerializeAndDeserializeBinaryTree serializeAndDeserializeBinaryTree;
@@ -26,11 +23,25 @@ class SerializeAndDeserializeBinaryTreeTest {
         String data = serializeAndDeserializeBinaryTree.serialize(root);
         TreeNode deserializedRoot = serializeAndDeserializeBinaryTree.deserialize(data);
 
-//        BinaryTreeTraversal binaryTreeTraversal = new BinaryTreeTraversal();
         Integer[] result = BinaryTreeGenerator.toArray(deserializedRoot);
+        Integer[] expectedResult = {1, 2, 3, null, null, 4, 5, null, null, null, null};
 
-        System.out.println(Arrays.toString(result));
+        assertArrayEquals(result, expectedResult);
 
+    }
+
+    @Test
+    void SerializeAndDeserializeBinaryTreeEmptyInput() {
+        Integer[] treeArray = {};
+        TreeNode root = BinaryTreeGenerator.fromArray(treeArray);
+
+        String data = serializeAndDeserializeBinaryTree.serialize(root);
+        TreeNode deserializedRoot = serializeAndDeserializeBinaryTree.deserialize(data);
+
+        Integer[] result = BinaryTreeGenerator.toArray(deserializedRoot);
+        Integer[] expectedResult = {};
+
+        assertArrayEquals(result, expectedResult);
 
     }
 }

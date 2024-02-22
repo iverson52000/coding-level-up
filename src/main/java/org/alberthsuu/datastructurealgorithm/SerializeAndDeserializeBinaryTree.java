@@ -1,6 +1,8 @@
 package org.alberthsuu.datastructurealgorithm;
 
 import org.alberthsuu.datastructurealgorithm.common.TreeNode;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -15,14 +17,15 @@ public class SerializeAndDeserializeBinaryTree {
     }
 
     // Decodes your encoded data to tree.
-    public TreeNode deserialize(String data) {
+    public TreeNode deserialize(@NotNull String data) {
         Queue<String> q = new LinkedList<>(Arrays.asList(data.split(",")));
 
         return dfs(q);
     }
 
-    private TreeNode dfs(Queue<String> q) {
+    private @Nullable TreeNode dfs(Queue<String> q) {
         String s = q.poll();
+        assert s != null;
         if (s.equals("#")) return null;
 
         TreeNode root = new TreeNode(Integer.valueOf(s));
