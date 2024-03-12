@@ -5,7 +5,7 @@ package(default_visibility = [
 ])
 
 go_library(
-    name = "arithmetic",
-    srcs = ["arithmetic.go"],
+    name = "custommath",
+    srcs = ["custommath.go"],
     importpath = "org/alberthsuu/custommath",
 )
