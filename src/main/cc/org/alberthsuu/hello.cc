@@ -2,6 +2,7 @@
 
 #include "./cat.h"
 
+using animal::Cat;
 using std::cout;
 using std::endl;
 
