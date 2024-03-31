@@ -8,7 +8,7 @@ using std::endl;
 
 int main() {
   Cat cat;
-  cat.jump();
+  cat.speak();
 
   cout << "Hello C++" << endl;
 

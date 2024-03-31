@@ -12,6 +12,9 @@ class Cat {
 
   void speak();
   void jump();
+
+ private:
+  bool happy = true;
 };
 }  // namespace animal
 

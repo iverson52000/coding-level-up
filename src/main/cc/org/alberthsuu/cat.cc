@@ -6,6 +6,6 @@ using std::cout;
 using std::endl;
 
 namespace animal {
-void Cat::speak() { cout << "Meouwww!!!" << endl; }
+void Cat::speak() { cout << this->happy << endl; }
 void Cat::jump() { cout << "Jumping to top of bookcase" << endl; }
 }  // namespace animal
