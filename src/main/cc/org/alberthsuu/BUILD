@@ -7,7 +7,10 @@ cc_library(
 cc_binary(
     name = "hello",
     srcs = ["hello.cc"],
-    deps = [":cat"],
+    deps = [
+        ":cat",
+        "@com_google_absl//absl/strings",
+    ],
 )
 
 cc_test(

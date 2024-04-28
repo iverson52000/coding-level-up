@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "./cat.h"
+#include "absl/strings/str_join.h"
 
 using animal::Cat;
 using std::cout;
@@ -32,8 +33,13 @@ int main() {
   int value1 = 8;
   int& value2 = value1;
   value1 = 20;
-
   std::cout << value2 << std::endl;
+
+  // test abseil
+  std::vector<std::string> vector = {"foo", "bar", "baz"};
+  std::string string = absl::StrJoin(vector, "-");
+
+  cout << "Joined string: " << string << "\n";
 
   return 0;
 }

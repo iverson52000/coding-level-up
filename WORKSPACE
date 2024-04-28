@@ -1,3 +1,4 @@
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
@@ -22,6 +23,12 @@ http_archive(
         "https://mirror.bazel.build/github.com/bazelbuild/bazel-gazelle/releases/download/v0.35.0/bazel-gazelle-v0.35.0.tar.gz",
         "https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.35.0/bazel-gazelle-v0.35.0.tar.gz",
     ],
+)
+
+git_repository(
+    name = "com_google_absl",
+    commit = "f638e34",
+    remote = "https://github.com/abseil/abseil-cpp.git",
 )
 
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
